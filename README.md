@@ -4,8 +4,8 @@ This is an fixed/updated version of the bounded buffer TLAPS proof originally wr
 
 ## Proofs no longer omitted
 
-- A couple cases of Lemma `ModDef` are proved.
-- Lemmas `SeqDef` and `EmptySeq` are proved. `AppendDef` and `TailDef` are still omitted.
+- A couple cases of Lemma `ModDef`.
+- Lemmas `SeqDef` and `EmptySeq`. `AppendDef` and `TailDef` are still omitted.
 - Theorem `ChBarImpl == Spec => C!Spec` - the main theorem proving that the bounded buffer algorithm implements the bounded channel specification under refinement mapping `C`.
 - Theorem `Spec => NC!Spec` - alternate form of the main theorem wrt. refinement mapping `NC`.
 
