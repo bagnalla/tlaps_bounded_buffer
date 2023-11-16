@@ -11,7 +11,7 @@ This is an fixed/updated version of the bounded buffer TLAPS proof originally wr
 
 ## Weak fairness of the consumer/receiver
 
-The original proof seems to have not taken fairness into account at all, despite the spec requiring weak fairness of the consumer/receiver. Probably the proof was written for a previous version of the spec that didn't require fairness and was not updated when the spec was changed to require it. Proving fairness seems to be a bit complicated (see Section 8.3.3 of the TLA+ hyperbook), thus we have the following new omitted theorems:
+The original proof seems to have not taken fairness into account at all, despite the spec requiring weak fairness of the consumer/receiver. Probably the proof was written for a previous version of the spec that didn't require fairness and was not updated when the spec was changed to require it (and this was not caught because the temporal reasoning steps affected by the change were not being machine-checked). Proving fairness seems to be a bit complicated (see Section 8.3.3 of the TLA+ hyperbook), thus we have the following new omitted theorems:
 
 - `WFC` - weak fairness of the bounded buffer consumer implies weak fairness of the bounded channel receiver under refinement mapping `C`.
 - `WFNC` - weak fairness of the bounded channel receiver under refinement mapping `C` implies weak fairness of the bounded channel receiver under refinement mapping `NC`.
