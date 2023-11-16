@@ -1,5 +1,5 @@
 ------------------------- MODULE PCalBoundedChannel -------------------------
-EXTENDS Integers, Sequences
+EXTENDS Integers, Sequences, TLAPS
 
 CONSTANT Msg, N
 
@@ -52,8 +52,12 @@ TypeOK == ch \in Seq(Msg)
 
 Inv == /\ TypeOK
        /\ Len(ch) =< N
+
+THEOREM RcvEnabled == TypeOK => (Len(ch) # 0 <=> ENABLED <<Rcv>>_vars)
+  PROOF OMITTED
+
 =============================================================================
 \* Modification History
-\* Last modified Tue Nov 14 22:19:49 EST 2023 by alex
+\* Last modified Wed Nov 15 20:09:50 EST 2023 by alex
 \* Last modified Wed Jun 08 06:29:24 PDT 2011 by lamport
 \* Created Sun Apr 17 11:40:12 PDT 2011 by lamport

@@ -704,12 +704,12 @@ LEMMA TailDef == \A S :
                         Tail(s) = [i \in 1..(Len(s)-1) |-> s[i+1]]
 PROOF OMITTED
 
-(* Weak fairness of Consumer implies weak fairness of C!Rcv. *)
-THEOREM WFC == Wf => C!Wf
+(* Spec implies weak fairness of C!Rcv. *)
+THEOREM WFC == Spec => C!Wf
 PROOF OMITTED
 
-(* Weak fairness of C!Rcv implies weak fairness of NMC!Rcv. *)
-THEOREM WFNC == C!Wf => NC!Wf
+(* C!Spec implies weak fairness of NMC!Rcv. *)
+THEOREM WFNC == C!Spec => NC!Wf
 PROOF OMITTED
 
 THEOREM ChBarImpl == Spec => C!Spec
@@ -1118,6 +1118,6 @@ THEOREM Spec => NC!Spec
   BY <1>1, <1>2, ChBarImpl
 =============================================================================
 \* Modification History
-\* Last modified Wed Nov 15 16:22:22 EST 2023 by alex
+\* Last modified Wed Nov 15 20:43:02 EST 2023 by alex
 \* Last modified Wed May 02 16:38:46 PDT 2012 by lamport
 \* Created Sun Apr 17 11:55:07 PDT 2011 by lamport
